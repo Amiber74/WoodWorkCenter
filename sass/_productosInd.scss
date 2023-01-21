@@ -1,0 +1,142 @@
+.prod_ind{
+    width: 100%;
+    padding: 10px;
+    .Prod{
+        width: 100%;
+        display: grid;
+        text-align: center;
+        gap: 5px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px 60px 60px 1fr 50px;
+        .img{
+            padding-inline: 30px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .nombre{
+            text-align: center;
+            align-self: center;
+            h2{
+                font-size: 2rem;
+                font-weight: 600;
+            }
+        }
+        .precio{
+            text-align: center;
+            align-self: center;
+            border-block: 1px solid black ;
+            padding-block: 6px;
+            p{
+                font-size: 2rem;
+                font-weight: 500;
+            }
+        }
+        .descripcion{
+            p{
+                font-size: 1.3rem;
+            }
+        }
+        .boton{
+            align-self: center;
+            border-top: 1px solid black;
+            padding-top: 5px;
+            button{
+                text-align: center;
+                padding: 5px;
+                border-radius: 20px;
+                background-color: rgb(165, 165, 165);
+                p{
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                }
+                &:active{
+                    background-color: gray;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .prod_ind{
+//     display: grid;
+//     padding: 10px;
+//     width: 100%;
+//     grid-template-columns: 1fr;
+//     grid-template-rows: 400px 150px 100px 1fr 100px;
+//     grid-template-areas: "img" "nombre" "precio" "descripcion" "boton";
+//     .img{
+//         grid-area: img;
+//         padding: 5px;
+//         img{    
+//             width: 100%;
+//             height: 100%;
+//         }
+//     }
+//     .nombre{
+//         grid-area: nombre;
+//         font-size: 1.5rem;
+//         text-align: center;
+//         align-self: center;
+//     }
+//     .precio{
+//         grid-area: precio;
+//         display: grid;
+//         border-block: 1px solid black;
+//         align-items: center;
+//         p{
+//             display: grid;
+//             font-size: 2rem;
+//             font-weight: 700;
+//             text-align: center;
+//             border-radius: 20px;
+//             padding: 10px;
+//         }
+//     }
+//     .descripcion{
+//         grid-area: descripcion;
+//         padding-block: 10px;
+//         border-bottom: 1px solid black;
+//         p{
+//             font-size: 1.5rem;
+//             font-weight: 500;
+//             text-align: center;
+//         }
+//     }
+//     .boton{
+//         grid-area: boton;
+//         margin: auto;
+//         button{
+//             text-align: center;
+//             padding: 10px;
+//             border-radius: 20px;
+//             background-color: rgb(165, 165, 165);
+//             p{
+//                 font-size: 1.5rem;
+//                 font-weight: 500;
+//             }
+//             &:active{
+//                 background-color: gray;
+//             }
+//         }
+//     }
+// }

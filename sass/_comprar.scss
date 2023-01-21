@@ -1,0 +1,136 @@
+.comprar{   
+    display: grid;
+    grid-template-rows: 1fr 1fr 80px;
+
+    gap: 5px;
+    .detalles{
+        display: grid;
+        width: 100%;
+        height: 700px;
+        overflow-y: scroll;
+        background-color: rgb(160, 160, 160);
+        .productos{
+            border-block: 1px solid black;
+            margin-bottom: 5px;
+            width: 100%;
+            align-self: center;
+            height: 150px;
+            padding: 5px;
+            display: grid;
+            grid-template-columns: 1fr 2fr 30px;
+            grid-template-rows: 1.4fr 1fr;
+            grid-template-areas: "img nombre boton" "img precio precio";
+            img{
+                grid-area: img;
+                width: 100%;
+                height: 100%;
+            }
+            .nombre{
+                grid-area: nombre;
+                text-align: center;
+                align-self: center;
+                font-size: 1.7rem;
+            }
+            .precio{
+                grid-area: precio;
+                text-align: center;
+                align-self: center;
+                font-weight: 600;
+                font-size: 2rem;
+            }
+            .eliminar{
+                grid-area: boton;
+                width: 20px;
+                height: 20px;
+                position: relative;
+                justify-self: center;
+                cursor: pointer;
+                margin-top: 5px;
+                span{
+                    display: block;
+                    background-color: black;
+                    width: 100%;
+                    height: 2px;
+                    z-index: 5;
+                    margin-top: 5px;
+                }
+                .linea_1{
+                    transform: rotate(45deg) translate(3px, 2.5px);
+
+                }
+                .linea_2{
+                    transform: rotate(-45deg) translate(2px, -2px);
+
+                }
+            }
+        }
+    }
+    .formulario{
+        padding: 10px;
+        display: grid;
+        align-content: center;
+        width: 100%;
+        height: 700px;
+        overflow-y: scroll;
+        background-color: rgb(160, 160, 160);
+        .precios{
+            height: 40px;
+            margin-top: 10px;
+            text-align: center;
+            align-items: center;
+            display: grid;
+            padding-inline: 10px;
+            gap: 10px;
+            grid-template-columns: 40px 1fr 90px 90px;
+            grid-template-areas: "cant nomb prec tot";
+            .cantidad{
+                grid-area: cant;
+                font-size: 1.5rem;
+            }
+            .tipo{
+                grid-area: nomb;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .precio{
+                grid-area: prec;
+                font-size: 1.5rem;
+            }
+            .total{
+                grid-area: tot;
+                font-size: 1.5rem;
+            }
+        }
+        .total_pagar{
+            display: grid;
+            border-top: 2px solid black;
+            padding-top: 15px;
+            grid-template-columns: 1fr 150px;
+            padding-inline: 20px;
+            text-align: center;
+            p{
+                font-size: 2rem
+            }
+        }
+
+
+    }
+        
+    .button{
+        align-self: center;
+        justify-self: center;
+        .boton-pagar{
+            background-color: gray;
+            font-size: 1.5rem;
+            font-weight: 500;
+            border-radius: 20px;
+            width: 150px;
+            height: 50px;
+            border: 2px solid black;
+            &:active{
+                background-color: rgb(180, 180, 180);
+            }
+        }
+    }
+    padding: 10px; 
+}
