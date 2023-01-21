@@ -3,12 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   list-style-type: none;
+  font-family: "Ubuntu", sans-serif;
 }
 
 body {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 100px 1fr 200px;
+  grid-template-rows: 100px 1fr 250px;
   grid-template-areas: "header" "main" "footer";
 }
 body header {
@@ -175,6 +176,7 @@ body main .cont_carrito a button {
   margin-left: 30%;
   margin-top: 5%;
   border-radius: 30px;
+  color: black;
   border: 2px solid black;
   background-color: gray;
   font-size: 1.5rem;
@@ -202,22 +204,65 @@ body footer {
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 50px;
+  grid-template-areas: "reds hor " "cont ubi " "der der";
   text-align: center;
   align-items: center;
 }
-body footer div h3 {
+body footer .redes {
+  grid-area: reds;
+}
+body footer .redes h3 {
   text-decoration: underline;
   font-size: 1.3rem;
   margin-bottom: 5px;
 }
-body footer div ul li {
+body footer .redes p {
+  font-size: 1.1rem;
+}
+body footer .horarios {
+  grid-area: hor;
+}
+body footer .horarios h3 {
+  text-decoration: underline;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+body footer .horarios p {
+  font-size: 1.1rem;
+}
+body footer .contacto {
+  grid-area: cont;
+}
+body footer .contacto h3 {
+  text-decoration: underline;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+body footer .contacto ul li {
   font-size: 1.1rem;
   text-decoration: none;
   color: white;
 }
-body footer div p {
+body footer .ubicacion {
+  grid-area: ubi;
+}
+body footer .ubicacion h3 {
+  text-decoration: underline;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+body footer .ubicacion p {
   font-size: 1.1rem;
+}
+body footer .derechos {
+  grid-area: der;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+body footer .derechos p {
+  font-size: 1rem;
 }
 body::-webkit-scrollbar {
   left: 0;
@@ -440,6 +485,10 @@ body::-webkit-scrollbar-thumb {
   background-color: gray;
 }
 
+* {
+  font-family: "Ubuntu", sans-serif;
+}
+
 .comprar {
   display: grid;
   grid-template-rows: 1fr 1fr 80px;
@@ -573,6 +622,9 @@ body::-webkit-scrollbar-thumb {
 
 /*  Layout  */
 @media (min-width: 1024px) {
+  body {
+    grid-template-rows: 100px 1fr 200px;
+  }
   body header {
     grid-template-columns: 100px 1fr 100px;
   }
@@ -619,16 +671,17 @@ body::-webkit-scrollbar-thumb {
   }
   footer {
     grid-template-columns: 1fr 1fr 1fr 1fr !important;
-    grid-template-rows: 1fr !important;
+    grid-template-rows: 1fr 40px !important;
+    grid-template-areas: "reds hor cont ubi " "der der der der" !important;
   }
-  footer div h3 {
-    font-size: 1.8rem !important;
-  }
-  footer div ul li {
+  footer h3 {
     font-size: 1.5rem !important;
   }
-  footer div p {
-    font-size: 1.5rem !important;
+  footer p {
+    font-size: 1.3rem !important;
+  }
+  footer ul li {
+    font-size: 1.3rem;
   }
 }
 /*      INICIO      */

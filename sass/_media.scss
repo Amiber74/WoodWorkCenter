@@ -4,6 +4,7 @@
 /*  Layout  */
 @media (min-width:1024px){
     body{
+        grid-template-rows: 100px 1fr 200px;
         header{
             grid-template-columns: 100px 1fr 100px;
             h1{
@@ -59,19 +60,17 @@
     }
     footer{ 
         grid-template-columns: 1fr 1fr 1fr 1fr !important;
-        grid-template-rows: 1fr !important;
-        div{
-            h3{
-                font-size: 1.8rem !important;
-            }
-            ul{
-                li{
-                    font-size: 1.5rem !important;
-                }
-            }
-            p{
-                font-size: 1.5rem !important;
-
+        grid-template-rows: 1fr 40px !important;
+        grid-template-areas: "reds hor cont ubi " "der der der der" !important;
+        h3{
+            font-size: 1.5rem !important;
+        }
+        p{
+            font-size: 1.3rem !important;
+        }
+        ul{
+            li{
+                font-size: 1.3rem;
             }
         }
     }
