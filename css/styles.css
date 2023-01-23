@@ -132,8 +132,8 @@ body main .cont_carrito ul .prod {
   display: grid;
   padding: 10px;
   grid-template-columns: 150px 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "img nombre" "img cant";
+  grid-template-rows: 1fr 30px 1fr;
+  grid-template-areas: "img nombre" "img med" "img cant";
   margin-block: 20px;
   width: 100%;
   height: 250px;
@@ -150,6 +150,12 @@ body main .cont_carrito ul .prod p.nombre {
   grid-area: nombre;
   font-size: 1.5rem;
   text-align: center;
+}
+body main .cont_carrito ul .prod p.medida {
+  grid-area: med;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
 }
 body main .cont_carrito ul .prod .cant {
   grid-area: cant;
@@ -435,10 +441,12 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   text-align: center;
   gap: 5px;
+  grid-template-areas: "img" "nombre" "precio" "med" "desc" "boton";
   grid-template-columns: 1fr;
-  grid-template-rows: 400px 60px 60px 1fr 50px;
+  grid-template-rows: 400px 60px 60px 40px 1fr 50px;
 }
 .prod_ind .Prod .img {
+  grid-area: img;
   padding-inline: 30px;
 }
 .prod_ind .Prod .img img {
@@ -446,6 +454,7 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
 }
 .prod_ind .Prod .nombre {
+  grid-area: nombre;
   text-align: center;
   align-self: center;
 }
@@ -454,6 +463,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 600;
 }
 .prod_ind .Prod .precio {
+  grid-area: precio;
   text-align: center;
   align-self: center;
   border-block: 1px solid black;
@@ -463,10 +473,32 @@ body::-webkit-scrollbar-thumb {
   font-size: 2rem;
   font-weight: 500;
 }
+.prod_ind .Prod .medida {
+  grid-area: med;
+  align-self: center;
+  padding: 5px;
+}
+.prod_ind .Prod .medida form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.prod_ind .Prod .medida form p {
+  font-size: 1rem;
+  text-align: end;
+  padding-right: 10px;
+}
+.prod_ind .Prod .medida form select {
+  width: 100px;
+}
+.prod_ind .Prod .descripcion {
+  grid-area: desc;
+  padding: 5px;
+}
 .prod_ind .Prod .descripcion p {
   font-size: 1.3rem;
 }
 .prod_ind .Prod .boton {
+  grid-area: boton;
   align-self: center;
   border-top: 1px solid black;
   padding-top: 5px;
@@ -768,8 +800,8 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 1024px) {
   .prod_ind .Prod {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 150px 100px 1fr 100px;
-    grid-template-areas: "img nombre" "img precio" "img descripcion" "img boton";
+    grid-template-rows: 150px 100px 50px 1fr 100px;
+    grid-template-areas: "img nombre" "img precio" "img med" "img descripcion" "img boton";
   }
   .prod_ind .Prod .img {
     grid-area: img;
@@ -785,6 +817,19 @@ body::-webkit-scrollbar-thumb {
   }
   .prod_ind .Prod .nombre h2 {
     font-size: 3rem;
+  }
+  .prod_ind .Prod .medida {
+    padding: 5px;
+  }
+  .prod_ind .Prod .medida form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .prod_ind .Prod .medida form p {
+    font-size: 1.5rem;
+  }
+  .prod_ind .Prod .medida form select {
+    width: 100px;
   }
   .prod_ind .Prod .precio {
     grid-area: precio;

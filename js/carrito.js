@@ -10,6 +10,7 @@ for (const prod of cont_carrito) {
     li.innerHTML = `
     <img class="imagen" src="${prod.imagen}">
     <p class="nombre">${prod.nombre}</p>
+    <p class ="medida">${prod.medidas}</p>
     <input class="tipo" type="hidden" value="${prod.tipo}">
     <input class="id" type="hidden" value="${prod.id}">
     <input class="precio" type="hidden" value="${prod.precio}">

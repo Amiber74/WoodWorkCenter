@@ -6,9 +6,11 @@
         display: grid;
         text-align: center;
         gap: 5px;
+        grid-template-areas: "img" "nombre" "precio" "med" "desc" "boton";
         grid-template-columns: 1fr;
-        grid-template-rows: 400px 60px 60px 1fr 50px;
+        grid-template-rows: 400px 60px 60px 40px 1fr 50px;
         .img{
+            grid-area: img;
             padding-inline: 30px;
             img{
                 width: 100%;
@@ -16,6 +18,7 @@
             }
         }
         .nombre{
+            grid-area: nombre;
             text-align: center;
             align-self: center;
             h2{
@@ -24,6 +27,7 @@
             }
         }
         .precio{
+            grid-area: precio;
             text-align: center;
             align-self: center;
             border-block: 1px solid black ;
@@ -33,12 +37,33 @@
                 font-weight: 500;
             }
         }
+        .medida{
+            grid-area: med;
+            align-self: center;
+            padding: 5px;
+            form{
+                
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                p{
+                    font-size: 1rem;
+                    text-align: end;
+                    padding-right:10px;
+                }
+                select{
+                    width: 100px;
+                }
+            }
+        }
         .descripcion{
+            grid-area: desc;
+            padding: 5px;
             p{
                 font-size: 1.3rem;
             }
         }
         .boton{
+            grid-area: boton;
             align-self: center;
             border-top: 1px solid black;
             padding-top: 5px;

@@ -94,10 +94,32 @@ precios_prod.append(total)
 boton.addEventListener('click',()=>{
     Swal.fire({
         title:'En espera de su pago ',
-        icon:'info',
-        iconColor:'gray',
-        html:'<p> Podes hacer transferencia o deposito a la siguiente cuenta</p>'+ '<p><strong>Nombre del banco</strong>: Banco Provincia</p>'+'<p><strong>CBU</strong>: ********************** </p>'+'<strong>Alias</strong>: Ejemplo_alias '+ '<p><strong>Titular</strong>: Facundo Gonzalez</p>'+'<p><strong>DNI</strong>: 12.345.678</p>'+'<hr>'+'<p><strong>Una vez hecho la transferencia o deposito, debera enviar el comprobante y foto del pedido al email: woodworkcenter@gmail.com </strong></p>'+'<hr>'+'<strong>MONTO TOTAL: '+'$'+new Intl.NumberFormat(['ban', 'id']).format(acum) + '</strong>',
+        showDenyButton:true,
+        denyButtonText: `Efectivo`,
+        confirmButtonText: 'Transferencia',
         confirmButtonColor: 'black',
+        denyButtonColor:'black',
+    }).then((res)=>{
+        if(res.isConfirmed == true){
+            Swal.fire({
+                title:'Transferencia',
+                icon:'info',
+                iconColor:'gray',
+                html:'<p> Podes hacer transferencia o deposito a la siguiente cuenta</p>'+ '<p><strong>Nombre del banco</strong>: Banco Provincia</p>'+'<p><strong>CBU</strong>: ********************** </p>'+'<strong>Alias</strong>: Ejemplo_alias '+ '<p><strong>Titular</strong>: Facundo Gonzalez</p>'+'<p><strong>DNI</strong>: 12.345.678</p>'+'<hr>'+'<p><strong>Una vez hecho la transferencia o deposito, debera enviar el comprobante y foto del pedido al email: woodworkcenter@gmail.com </strong></p>'+'<hr>'+'<strong>MONTO TOTAL: '+'$'+new Intl.NumberFormat(['ban', 'id']).format(acum) + '</strong>',
+                confirmButtonColor: 'black',
+            })   
+        } else if(res.isDenied == true){
+            Swal.fire({
+                title: 'Input email address',
+                input: 'email',
+                inputLabel: 'Your email address',
+                inputPlaceholder: 'Enter your email address'
+            }).then((resp)=>{
+                console.log(resp.value)
+            })
+        } else {
+            return
+        }
     })
 })
 

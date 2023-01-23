@@ -180,8 +180,8 @@
     .prod_ind{
         .Prod{
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 150px 100px 1fr 100px;
-            grid-template-areas: "img nombre" "img precio" "img descripcion" "img boton";
+            grid-template-rows: 150px 100px 50px 1fr 100px;
+            grid-template-areas: "img nombre" "img precio" "img med" "img descripcion" "img boton";
         .img{
             grid-area: img;
             padding: 20px;
@@ -195,6 +195,20 @@
             grid-area: nombre;
             h2{
                 font-size: 3rem;
+            }
+        }
+        .medida{
+            padding: 5px;
+            form{
+                
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                p{
+                    font-size: 1.5rem;
+                }
+                select{
+                    width: 100px;
+                }
             }
         }
         .precio{
