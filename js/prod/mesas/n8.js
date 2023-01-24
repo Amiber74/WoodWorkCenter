@@ -4,9 +4,6 @@ const lista_carrito = JSON.parse(localStorage.getItem("Carrito"))
 const select = document.querySelector('#select')
 
 
-
-//<div class="precio">  </div>
-
 for (const prod of Productos){
     if (prod.id == 8.1){ 
         const Prod = document.createElement('div')

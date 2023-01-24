@@ -86,7 +86,7 @@ body{
                 text-align: center;
                 li{
                     list-style-type: none;
-                    font-size: 2rem;
+                    margin-top: 10px;
                     &:hover{
                         width: 100%;
                         a{
@@ -99,7 +99,7 @@ body{
                         text-decoration: none;
                         p{
                             color: black;
-                            font-size: 3rem;
+                            font-size: 2rem;
                             margin-top: 10px;
                             width: 100%;
                         }

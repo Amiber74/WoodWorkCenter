@@ -3,6 +3,7 @@ let Productos = JSON.parse(localStorage.getItem("Productos"))
 
 for (const prod of Productos){
     if (prod.tipo == "mesa"){
+        if(prod.visibilidad==true){
         const div = document.createElement("div")
         div.classList.add ("prod")
         div.innerHTML=`
@@ -12,5 +13,10 @@ for (const prod of Productos){
             <p class="precio">$${new Intl.NumberFormat(['ban', 'id']).format(prod.precio)} </p>
         `   
         contenedor_mesas.append(div)
+        }else{
+            continue
+        }
     }
 }
+
+/**/
