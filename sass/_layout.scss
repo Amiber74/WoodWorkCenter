@@ -31,8 +31,8 @@ body{
         }
         .menu{
             grid-area: menu;
-            top: 5.5% !important;
-            left: 8% !important;
+            align-self: center;
+            justify-self: center;
         }
         .carrito{
             grid-area: carrito;
