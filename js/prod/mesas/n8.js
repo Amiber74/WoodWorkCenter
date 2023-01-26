@@ -34,7 +34,9 @@ for (const prod of Productos){
         let id_nuevo = 8.1
         const precio = document.createElement('div')
         precio.classList.add('precio')
+
         precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(prod.precio)}</p>`
+        
         medida.addEventListener("change",(element)=>{
             console.log(element.target.value)
             const Medida_nueva=Productos.find((el)=>el.id===Number(element.target.value))
@@ -51,7 +53,6 @@ for (const prod of Productos){
                 precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
                 id_nuevo=8.3
             }
-            console.log(n_precio) 
         })
         Prod.append(precio)
 
@@ -62,6 +63,7 @@ for (const prod of Productos){
         <button type="submit"><p>Agregar a carrito</p></button>
         `   
         Prod.append(boton)
+
         boton.addEventListener("click", () => {
             const prod_C = Productos.find((p)=>p.id == id_nuevo)
             for (const Busq of lista_carrito) {

@@ -5,7 +5,7 @@
 .comprar{   
     display: grid;
     grid-template-rows: 1fr 1fr 80px;
-
+    background-color: white;
     gap: 5px;
     .detalles{
         display: grid;
@@ -84,8 +84,8 @@
             align-items: center;
             display: grid;
             padding-inline: 10px;
-            gap: 10px;
-            grid-template-columns: 40px 1fr 90px 90px;
+            gap: 15px;
+            grid-template-columns: 30px 1fr 110px 110px;
             grid-template-areas: "cant nomb prec tot";
             .cantidad{
                 grid-area: cant;
@@ -136,5 +136,88 @@
             }
         }
     }
+
+    .form_enviar{
+        position: fixed;
+        z-index: -2;
+        background-color:rgb(170, 170, 170);
+        border: 2px solid black;
+        border-radius: 15px;
+        width: 95%;
+        height: 400px;
+        top: 20%;
+        bottom: 20% ;
+        div{
+            form{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5,40px) 1fr 50px ;
+                text-align: center;
+                font-size: 1.3rem;
+                grid-template-areas: 
+                "nombre_text"
+                "nombre_input"
+                "email_text"
+                "email_input"
+                "comentario_text"
+                "comentario_input"
+                "boton";
+                #text-nombre{
+                    grid-area: nombre_text;
+                    align-self: center;
+                    text-decoration:underline;
+                }
+                #nombre{
+                    grid-area: nombre_input;
+                    width: 300px;
+                    height: 90%;
+                    justify-self: center;
+                    border-radius: 15px;
+                }
+                #text-email{
+                    grid-area: email_text;
+                    align-self: center;
+                    text-decoration:underline;
+                }
+                #email{
+                    grid-area: email_input;
+                    padding: 5px;
+                    width: 300px;
+                    height: 90%;
+                    justify-self: center;
+                    border-radius: 15px;
+                }
+                #text-comentario{
+                    align-self: center;
+                    grid-area: comentario_text;
+                    text-decoration:underline;
+                }
+                textarea{
+                    grid-area: comentario_input;
+                    padding: 5px;
+                    border-radius: 15px;
+                }
+                #enviar{
+                    grid-area: boton;
+                    justify-self: center;
+                    align-self: center;
+                    width: 100px;
+                    height: 30px;
+                    background-color: gray;
+                    border-radius: 10px;
+                    &:active{
+                        background-color: rgb(165, 164, 164);
+                    }
+                }
+                padding: 10px;
+            }
+        }
+    }
+    .form_enviar-activo{
+        z-index: 5;
+    }
+
     padding: 10px; 
+
+
 }

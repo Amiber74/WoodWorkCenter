@@ -2,31 +2,83 @@ const contenedor = document.querySelector(".prod_ind")
 const Productos = JSON.parse(localStorage.getItem("Productos"))
 const lista_carrito = JSON.parse(localStorage.getItem("Carrito"))
 
+
 for (const prod of Productos){
-    if (prod.id == 10){
+    if (prod.id == 10){ 
         const Prod = document.createElement('div')
         Prod.classList.add('Prod')
         Prod.innerHTML=`
         <div class="img"> <img src="${prod.imagen}" alt=""></div>
         <div class="nombre"> <h2>${prod.nombre}</h2> </div>
-        <div class="precio"> <p>$${new Intl.NumberFormat(['ban', 'id']).format(prod.precio)}</p> </div>
-        <div class="descripcion"><p>${prod.medidas}</p> <p>${prod.descripcion}</p></div>
+        
+        <div class="descripcion">
+            <p>${prod.descripcion}</p>
+        </div>
         `
         contenedor.append(Prod)
+
+        const medida = document.createElement('div')
+        medida.classList.add('medida')
+        medida.innerHTML=`<form>
+        <p>Medidas</p>
+        <select id ="select" name="combo">
+            <option value="10"selected>090</option>
+            <option value="10.1" >100</option>
+            <option value="10.2">120</option>
+            <option value="10.3">140</option>
+        </select>
+        </form>`
+        Prod.append(medida)
+        
+        let n_precio = null
+        let id_nuevo = 10
+        const precio = document.createElement('div')
+        precio.classList.add('precio')
+
+        precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(prod.precio)}</p>`
+        
+        medida.addEventListener("change",(element)=>{
+            console.log(element.target.value)
+            const Medida_nueva=Productos.find((el)=>el.id===Number(element.target.value))
+            if(Medida_nueva.id == 10){
+                n_precio=Medida_nueva.precio
+                precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
+                id_nuevo=10
+            }else if (Medida_nueva.id == 10.1){
+                n_precio=Medida_nueva.precio
+                precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
+                id_nuevo=10.1
+            } else if (Medida_nueva.id == 10.2){
+                n_precio=Medida_nueva.precio
+                precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
+                id_nuevo=10.2
+            } else if (Medida_nueva.id == 10.3){
+                n_precio=Medida_nueva.precio
+                precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
+                id_nuevo=10.3
+            } else{
+                return
+            }
+        })
+        Prod.append(precio)
+
+
         const boton = document.createElement('div')
         boton.classList.add('boton')
         boton.innerHTML = `
         <button type="submit"><p>Agregar a carrito</p></button>
         `   
         Prod.append(boton)
+
         boton.addEventListener("click", () => {
-            const prod_C = Productos.find((p)=>p.id == 10)
+            const prod_C = Productos.find((p)=>p.id == id_nuevo)
             for (const Busq of lista_carrito) {
-                let rep = lista_carrito.some((el)=>el.id == 10)
+                let rep = lista_carrito.some((el)=>el.id == id_nuevo)
                 if (rep){
                     return
                 }
             }
+            console.log(id_nuevo)
             lista_carrito.push(prod_C)
             localStorage.setItem("Carrito", JSON.stringify(lista_carrito))
             
@@ -37,7 +89,6 @@ for (const prod of Productos){
                 icon:'success',
                 
             }).then((result)=>{
-                console.log(String( result.isDismissed))
                 if( String( result.isDismissed) === "true"){
                     location.reload()
                 }

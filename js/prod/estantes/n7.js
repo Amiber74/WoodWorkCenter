@@ -1,10 +1,11 @@
 const contenedor = document.querySelector(".prod_ind")
 const Productos = JSON.parse(localStorage.getItem("Productos"))
 const lista_carrito = JSON.parse(localStorage.getItem("Carrito"))
+const select = document.querySelector('#select')
 
 
 for (const prod of Productos){
-    if (prod.id == 12){ 
+    if (prod.id == 7){ 
         const Prod = document.createElement('div')
         Prod.classList.add('Prod')
         Prod.innerHTML=`
@@ -22,16 +23,17 @@ for (const prod of Productos){
         medida.innerHTML=`<form>
         <p>Medidas</p>
         <select id ="select" name="combo">
-            <option value="12"selected>090</option>
-            <option value="12.1" >100</option>
-            <option value="12.2">120</option>
-            <option value="12.3">140</option>
+            <option value="7"selected>50 x 32p x 150h</option>
+            <option value="7.1" >100 x 32p x 150h</option>
+            <option value="7.2">150 x 32p x 150h</option>
+            <option value="7.3">200 x 32p x 150h</option>
+            <option value="7.4">250 x 32p x 150h</option>
         </select>
         </form>`
         Prod.append(medida)
         
         let n_precio = null
-        let id_nuevo = 12
+        let id_nuevo = 7
         const precio = document.createElement('div')
         precio.classList.add('precio')
 
@@ -40,24 +42,26 @@ for (const prod of Productos){
         medida.addEventListener("change",(element)=>{
             console.log(element.target.value)
             const Medida_nueva=Productos.find((el)=>el.id===Number(element.target.value))
-            if(Medida_nueva.id == 12){
+            if(Medida_nueva.id == 7){
                 n_precio=Medida_nueva.precio
                 precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
-                id_nuevo=12
-            }else if (Medida_nueva.id == 12.1){
+                id_nuevo=7
+            }else if (Medida_nueva.id == 7.1){
                 n_precio=Medida_nueva.precio
                 precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
-                id_nuevo=12.1
-            } else if (Medida_nueva.id == 12.2){
+                id_nuevo=7.1
+            } else if (Medida_nueva.id == 7.2){
                 n_precio=Medida_nueva.precio
                 precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
-                id_nuevo=12.2
-            } else if (Medida_nueva.id == 12.3){
+                id_nuevo=7.2
+            } else if (Medida_nueva.id == 7.3){
                 n_precio=Medida_nueva.precio
                 precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
-                id_nuevo=12.3
-            } else{
-                return
+                id_nuevo=7.3
+            } else if (Medida_nueva.id == 7.4){
+                n_precio=Medida_nueva.precio
+                precio.innerHTML=`<p>$${new Intl.NumberFormat(['ban', 'id']).format(n_precio)}</p>`
+                id_nuevo=7.4
             }
         })
         Prod.append(precio)
@@ -98,3 +102,8 @@ for (const prod of Productos){
 
     }
 }
+
+
+// select.addEventListener("change",()=>{
+//     console.log(Number(select.value))
+// })

@@ -6,9 +6,9 @@
         display: grid;
         text-align: center;
         gap: 5px;
-        grid-template-areas: "img" "nombre" "precio" "med" "desc" "boton";
+        grid-template-areas: "img" "nombre" "precio" "med" "desc" "disp" "boton";
         grid-template-columns: 1fr;
-        grid-template-rows: 400px 60px 60px 40px 1fr 50px;
+        grid-template-rows: 400px 60px 60px 40px 1fr 40px 50px;
         .img{
             grid-area: img;
             padding-inline: 30px;
@@ -41,17 +41,21 @@
             grid-area: med;
             align-self: center;
             padding: 5px;
+            font-size: 1.5rem;
             form{
-                
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 p{
-                    font-size: 1rem;
+                    font-size: 1.5rem;
                     text-align: end;
                     padding-right:10px;
+                    align-self: center;
                 }
                 select{
-                    width: 100px;
+                    width: 120px;
+                    height: 20px;
+                    text-align: center;
+                    align-self: center;
                 }
             }
         }
@@ -59,8 +63,13 @@
             grid-area: desc;
             padding: 5px;
             p{
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
+        }
+        .disp{
+            font-size: 1rem;
+            text-align: center;
+            color: rgba(128, 128, 128, 0.507);
         }
         .boton{
             grid-area: boton;

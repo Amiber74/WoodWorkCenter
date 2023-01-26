@@ -10,7 +10,9 @@ for (const prod of Productos){
         <div class="img"> <img src="${prod.imagen}" alt=""></div>
         <div class="nombre"> <h2>${prod.nombre}</h2> </div>
         <div class="precio"> <p>$${new Intl.NumberFormat(['ban', 'id']).format(prod.precio)}</p> </div>
-        <div class="descripcion"><p>${prod.medidas}</p> <p>${prod.descripcion}</p></div>
+        <div class="medida"> <p>${prod.medidas}</p></div>
+        <div class="descripcion"><p>${prod.descripcion}</p></div>
+        <div class="disp"> <p>Consultar Stock</p></div>
         `
         contenedor.append(Prod)
         const boton = document.createElement('div')

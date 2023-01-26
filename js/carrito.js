@@ -23,7 +23,7 @@ for (const prod of cont_carrito) {
 }
 const button = document.createElement('div')
 
-button.innerHTML=`<a href="http://woodworkcenter.netlify.app/pages/comprar.html"><button>Comprar!</button></a>`
+button.innerHTML=`<a href="http://127.0.0.1:5500//pages/comprar.html"><button>Comprar!</button></a>`
 Contenedor.append(button)
 
 let valor_inputs = document.querySelectorAll('.cantidad_prod')

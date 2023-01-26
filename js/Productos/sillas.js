@@ -3,6 +3,7 @@ let Productos = JSON.parse(localStorage.getItem("Productos"))
 
 for (const prod of Productos){
     if (prod.tipo == "silla"){
+        if(prod.visibilidad==true){
         const div = document.createElement("div")
         div.classList.add ("prod")
         div.innerHTML=`
@@ -10,7 +11,10 @@ for (const prod of Productos){
             <img src="../../img/sillas/silla_${prod.id}.jpg" class="img">
             <p class="nombre">${prod.nombre}</p>
             <p class="precio">$${new Intl.NumberFormat(['ban', 'id']).format(prod.precio)} </p>
-        `
+        `   
         contenedor_sillas.append(div)
+        }else{
+            continue
+        }
     }
 }

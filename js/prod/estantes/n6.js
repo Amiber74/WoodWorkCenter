@@ -3,14 +3,16 @@ const Productos = JSON.parse(localStorage.getItem("Productos"))
 const lista_carrito = JSON.parse(localStorage.getItem("Carrito"))
 
 for (const prod of Productos){
-    if (prod.id == 13){
+    if (prod.id == 6){
         const Prod = document.createElement('div')
         Prod.classList.add('Prod')
         Prod.innerHTML=`
         <div class="img"> <img src="${prod.imagen}" alt=""></div>
         <div class="nombre"> <h2>${prod.nombre}</h2> </div>
-        <div class="precio"> <p>$${new Intl.NumberFormat(['ban', 'id']).format(prod.precio)}</p> </div>
-        <div class="descripcion"><p>${prod.medidas}</p> <p>${prod.descripcion}</p></div>
+        <div class="precio"> <p>Precio segun la medida</p> </div>
+        <div class="medida"> <p>Consultar medida</p></div>
+        <div class="descripcion"><p>${prod.descripcion}</p></div>
+        <div class="disp"> <p>Disponibilidad de entrega dentro de los proximos 45 a 60 dias habiles</p></div>
         `
         contenedor.append(Prod)
         const boton = document.createElement('div')
@@ -20,9 +22,9 @@ for (const prod of Productos){
         `   
         Prod.append(boton)
         boton.addEventListener("click", () => {
-            const prod_C = Productos.find((p)=>p.id == 13)
+            const prod_C = Productos.find((p)=>p.id == 6)
             for (const Busq of lista_carrito) {
-                let rep = lista_carrito.some((el)=>el.id == 13)
+                let rep = lista_carrito.some((el)=>el.id == 6)
                 if (rep){
                     return
                 }

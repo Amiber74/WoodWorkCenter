@@ -109,7 +109,7 @@ body{
             transition: 0.8s;
         }
         .activado{
-            transform: translate(-800px);
+            transform: translate(-1000px);
             transition: 1s;
         }
         .cont_carrito{
@@ -206,7 +206,7 @@ body{
             transition: 0.8s;
         }
         .activo{
-            transform: translate(-800px);
+            transform: translate(-1000px);
             transition: 1.2s;
         }
     }
@@ -229,10 +229,17 @@ body{
                 font-size: 1.3rem;
                 margin-bottom: 5px;
             }
-            p{
-                font-size: 1.1rem;
+            ul{
+                a{
+                    text-decoration: none;
+                    li{
+                        color: white;
+                        font-size: 1.1rem;
+                    }
+                }
             }
         }
+
         .horarios{
             grid-area: hor;
             h3{

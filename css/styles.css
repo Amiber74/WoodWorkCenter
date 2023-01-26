@@ -108,7 +108,7 @@ body main .cont_menu ul li a p {
   width: 100%;
 }
 body main .activado {
-  transform: translate(-800px);
+  transform: translate(-1000px);
   transition: 1s;
 }
 body main .cont_carrito {
@@ -202,7 +202,7 @@ body main .cont_carrito::-webkit-scrollbar-thumb {
   background-color: white;
 }
 body main .activo {
-  transform: translate(-800px);
+  transform: translate(-1000px);
   transition: 1.2s;
 }
 body footer {
@@ -225,7 +225,11 @@ body footer .redes h3 {
   font-size: 1.3rem;
   margin-bottom: 5px;
 }
-body footer .redes p {
+body footer .redes ul a {
+  text-decoration: none;
+}
+body footer .redes ul a li {
+  color: white;
   font-size: 1.1rem;
 }
 body footer .horarios {
@@ -349,7 +353,7 @@ body::-webkit-scrollbar-thumb {
   max-height: 300px;
 }
 #index #carrousel .puntos {
-  position: relative;
+  position: sticky;
   width: 100%;
   padding: 1px;
   display: flex;
@@ -392,6 +396,14 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 10px;
   background-color: gray;
   border-block: 2px solid black;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+#index #datos_envio p {
+  text-align: center;
+  align-self: center;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .producto {
@@ -443,9 +455,9 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   text-align: center;
   gap: 5px;
-  grid-template-areas: "img" "nombre" "precio" "med" "desc" "boton";
+  grid-template-areas: "img" "nombre" "precio" "med" "desc" "disp" "boton";
   grid-template-columns: 1fr;
-  grid-template-rows: 400px 60px 60px 40px 1fr 50px;
+  grid-template-rows: 400px 60px 60px 40px 1fr 40px 50px;
 }
 .prod_ind .Prod .img {
   grid-area: img;
@@ -479,25 +491,35 @@ body::-webkit-scrollbar-thumb {
   grid-area: med;
   align-self: center;
   padding: 5px;
+  font-size: 1.5rem;
 }
 .prod_ind .Prod .medida form {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 .prod_ind .Prod .medida form p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-align: end;
   padding-right: 10px;
+  align-self: center;
 }
 .prod_ind .Prod .medida form select {
-  width: 100px;
+  width: 120px;
+  height: 20px;
+  text-align: center;
+  align-self: center;
 }
 .prod_ind .Prod .descripcion {
   grid-area: desc;
   padding: 5px;
 }
 .prod_ind .Prod .descripcion p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+}
+.prod_ind .Prod .disp {
+  font-size: 1rem;
+  text-align: center;
+  color: rgba(128, 128, 128, 0.507);
 }
 .prod_ind .Prod .boton {
   grid-area: boton;
@@ -526,6 +548,7 @@ body::-webkit-scrollbar-thumb {
 .comprar {
   display: grid;
   grid-template-rows: 1fr 1fr 80px;
+  background-color: white;
   gap: 5px;
   padding: 10px;
 }
@@ -605,8 +628,8 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   display: grid;
   padding-inline: 10px;
-  gap: 10px;
-  grid-template-columns: 40px 1fr 90px 90px;
+  gap: 15px;
+  grid-template-columns: 30px 1fr 110px 110px;
   grid-template-areas: "cant nomb prec tot";
 }
 .comprar .formulario .precios .cantidad {
@@ -653,6 +676,76 @@ body::-webkit-scrollbar-thumb {
 .comprar .button .boton-pagar:active {
   background-color: rgb(180, 180, 180);
 }
+.comprar .form_enviar {
+  position: fixed;
+  z-index: -2;
+  background-color: rgb(170, 170, 170);
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 95%;
+  height: 400px;
+  top: 20%;
+  bottom: 20%;
+}
+.comprar .form_enviar div form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 40px) 1fr 50px;
+  text-align: center;
+  font-size: 1.3rem;
+  grid-template-areas: "nombre_text" "nombre_input" "email_text" "email_input" "comentario_text" "comentario_input" "boton";
+  padding: 10px;
+}
+.comprar .form_enviar div form #text-nombre {
+  grid-area: nombre_text;
+  align-self: center;
+  text-decoration: underline;
+}
+.comprar .form_enviar div form #nombre {
+  grid-area: nombre_input;
+  width: 300px;
+  height: 90%;
+  justify-self: center;
+  border-radius: 15px;
+}
+.comprar .form_enviar div form #text-email {
+  grid-area: email_text;
+  align-self: center;
+  text-decoration: underline;
+}
+.comprar .form_enviar div form #email {
+  grid-area: email_input;
+  padding: 5px;
+  width: 300px;
+  height: 90%;
+  justify-self: center;
+  border-radius: 15px;
+}
+.comprar .form_enviar div form #text-comentario {
+  align-self: center;
+  grid-area: comentario_text;
+  text-decoration: underline;
+}
+.comprar .form_enviar div form textarea {
+  grid-area: comentario_input;
+  padding: 5px;
+  border-radius: 15px;
+}
+.comprar .form_enviar div form #enviar {
+  grid-area: boton;
+  justify-self: center;
+  align-self: center;
+  width: 100px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 10px;
+}
+.comprar .form_enviar div form #enviar:active {
+  background-color: rgb(165, 164, 164);
+}
+.comprar .form_enviar-activo {
+  z-index: 5;
+}
 
 /*  Layout  */
 @media (min-width: 1024px) {
@@ -663,12 +756,12 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: 100px 1fr 100px;
   }
   body header h1 {
-    margin-top: 30px;
     font-size: 3rem;
+    align-self: center !important;
   }
   body header .menu {
-    top: 7% !important;
-    left: 5% !important;
+    top: 15% !important;
+    left: 25% !important;
   }
   main .cont_menu {
     position: absolute !important;
@@ -802,8 +895,8 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 1024px) {
   .prod_ind .Prod {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 150px 100px 50px 1fr 100px;
-    grid-template-areas: "img nombre" "img precio" "img med" "img descripcion" "img boton";
+    grid-template-rows: 150px 100px 50px 1fr 30px 100px;
+    grid-template-areas: "img nombre" "img precio" "img med" "img descripcion" "img disp" "img boton";
   }
   .prod_ind .Prod .img {
     grid-area: img;
@@ -831,7 +924,9 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.5rem;
   }
   .prod_ind .Prod .medida form select {
-    width: 100px;
+    width: 150px;
+    height: 30px;
+    font-weight: 500;
   }
   .prod_ind .Prod .precio {
     grid-area: precio;
@@ -844,6 +939,9 @@ body::-webkit-scrollbar-thumb {
   }
   .prod_ind .Prod .descripcion p {
     font-size: 1.8rem;
+  }
+  .prod_ind .Prod .disp {
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 1024px) {
@@ -892,6 +990,10 @@ body::-webkit-scrollbar-thumb {
   }
   .comprar .formulario::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.3);
+  }
+  .comprar .form_enviar {
+    width: 50%;
+    justify-self: center;
   }
   .comprar .button {
     grid-area: boton;

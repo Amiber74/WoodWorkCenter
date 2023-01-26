@@ -8,12 +8,12 @@
         header{
             grid-template-columns: 100px 1fr 100px;
             h1{
-                margin-top: 30px;
                 font-size: 3rem;
+                align-self: center !important;
             }
             .menu{
-                top: 7% !important;
-                left: 5% !important;
+                top: 15% !important;
+                left: 25% !important;
             }
         }
     }
@@ -180,8 +180,8 @@
     .prod_ind{
         .Prod{
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 150px 100px 50px 1fr 100px;
-            grid-template-areas: "img nombre" "img precio" "img med" "img descripcion" "img boton";
+            grid-template-rows: 150px 100px 50px 1fr 30px 100px;
+            grid-template-areas: "img nombre" "img precio" "img med" "img descripcion" "img disp" "img boton";
         .img{
             grid-area: img;
             padding: 20px;
@@ -207,7 +207,9 @@
                     font-size: 1.5rem;
                 }
                 select{
-                    width: 100px;
+                    width: 150px;
+                    height: 30px;
+                    font-weight: 500;
                 }
             }
         }
@@ -222,6 +224,9 @@
             p{
                 font-size: 1.8rem;
             }
+        }
+        .disp{
+            font-size: 1.2rem;
         }
         }
         
@@ -280,6 +285,10 @@
             &::-webkit-scrollbar-thumb{
                 background-color: rgba(0, 0, 0, 0.300);       
             }
+        }
+        .form_enviar{
+            width: 50%;
+            justify-self: center;
         }
         .button{
             grid-area: boton;
