@@ -110,7 +110,7 @@ formulario.innerHTML=`
 
     <input type="submit" value="Enviar" id="enviar">
 
-    <input type="hidden" name="_next" value="http://https://woodworkcenter.netlify.app///pages/comprar.html">
+    <input type="hidden" name="_next" value="https://woodworkcenter.netlify.app//pages/comprar.html">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_subject" value="Nuevo Pedido">
     <input type="hidden" name="_template" value="box">
