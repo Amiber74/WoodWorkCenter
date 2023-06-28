@@ -11,6 +11,7 @@ body{
     grid-template-columns: 100%;
     grid-template-rows: 100px 1fr 250px;
     grid-template-areas: "header" "main" "footer";
+    background-color: #fcecd6;
     header{
         grid-area: header;
         background-color: rgb(22, 22, 22);
