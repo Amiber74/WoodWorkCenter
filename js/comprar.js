@@ -143,7 +143,7 @@ boton.addEventListener('click',()=>{
                 title:'Transferencia',
                 icon:'info',
                 iconColor:'gray',
-                html:'<p> Podes hacer transferencia o deposito a la siguiente cuenta</p>'+ '<p><strong>Nombre del banco</strong>: Banco Provincia</p>'+'<p><strong>CBU</strong>: 0140079303502051605966 </p>'+'<strong>Alias</strong>: BODA.PIPA.OVEJA '+ '<p><strong>Titular</strong>: Cristian Joel Rodriguez Tesen</p>'+'<p><strong>DNI</strong>: 95.144.559</p>'+'<p><strong>Numero de cuenta:</strong> 520-516059/6</p>'+'<hr>'+'<p><strong>Una vez hecho la transferencia o deposito, debera enviar el comprobante y foto del pedido al email: woodworkcenter@gmail.com </strong></p>'+'<hr>'+'<strong>MONTO TOTAL: '+'$'+new Intl.NumberFormat(['ban', 'id']).format(acum*0.95) + '</strong>',
+                html:'<p> Podes hacer transferencia o deposito a la siguiente cuenta</p>'+ '<p><strong>Nombre del banco</strong>: Banco Provincia</p>'+'<p><strong>CBU</strong>:  </p>'+'<strong>Alias</strong>:  '+ '<p><strong>Titular</strong>: </p>'+'<p><strong>DNI</strong>: 95.144.559</p>'+'<p><strong>Numero de cuenta:</strong> </p>'+'<hr>'+'<p><strong>Una vez hecho la transferencia o deposito, debera enviar el comprobante y foto del pedido al email: woodworkcenter@gmail.com </strong></p>'+'<hr>'+'<strong>MONTO TOTAL: '+'$'+new Intl.NumberFormat(['ban', 'id']).format(acum*0.95) + '</strong>',
                 confirmButtonColor: 'black',
             })   
         } else if(res.isDenied == true){
@@ -155,3 +155,9 @@ boton.addEventListener('click',()=>{
     })
 })
 
+/* 
+TITULAR: Cristian Joel Rodriguez Tesen
+ALIAS: BODA.PIPA.OVEJA
+CBU : 0140079303502051605966
+NUMERO DE CUENTA: 520-516059/6
+*/
